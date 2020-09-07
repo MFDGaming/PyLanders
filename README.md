@@ -3,6 +3,7 @@ A port of PyLanders to Python3
 
 ## Prerequisites
 You will need to have Python 3.x and `pip` installed. To install the dependencies, do:
+
 Linux/Unix/MacOS:
 ```sh
 pip3 install -r requirements.txt
