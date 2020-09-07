@@ -275,9 +275,9 @@ class Game:
         
     def on_mouse_motion(self,x,y,dx,dy):
         if not self.inventory:
-            self.player.angle_y -= dx *0.75 #NOTE: These are reserved.
-            self.player.angle_x += dy *0.75
-            self.player.angle_x = max(min(self.player.angle_x, 90),-90)
+            self.player.angle_y -= dx *0.5 #NOTE: These are reserved.
+            self.player.angle_x += dy *0.5
+            self.player.angle_x = max(min(self.player.angle_x, 45),-45)
         else:
             self.invent_pos = (self.invent_pos[0]+dx,self.invent_pos[1]+dy)
             

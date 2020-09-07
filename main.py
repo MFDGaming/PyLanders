@@ -1,5 +1,5 @@
 import os
-import imp
+import importlib
 from util import yn, Box
 from game import Game
 import pyglet
@@ -41,12 +41,12 @@ if world not in os.listdir('worlds'):
                       [os.path.splitext(n)[0] for n in os.listdir('generators')]
                       )
     print('Available generators: ',', '.join(gen_list))
-    generator = input('Select a generator: ') +'.py'
+    generator = input('Select a generator: ')
     open('worlds/'+world+'/generator','w').write(generator)
-    generator = imp.load_source('generator','generators/'+generator)
+    generator = importlib.import_module('generators.'+generator)
     generator.initialize(world)
 else:
-    generator = imp.load_source('generator','generators/'+open('worlds/'+world+'/generator').read())
+    generator = importlib.import_module('generators.'+open('worlds/'+world+'/generator').read())
 
 generator.load(world)
 
