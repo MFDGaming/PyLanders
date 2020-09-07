@@ -15,6 +15,7 @@ pip install -r requirements.txt
 
 ## Usage
 Run the `main.py` file as:
+
 Linux/Unix/MacOS:
 ```sh
 python3 ./main.py
